@@ -1,8 +1,8 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
 
-pkgname=chili-pkgname
-pkgdesc="Package template for Chililinux"
-#depends=('')
+pkgname=chili-onelinux
+pkgdesc="Create a mini linux with busybox"
+depends=('cpio' 'tar' 'sed' 'coreutils' 'wget' 'qemu-system-x86')
 #makedepends=('')
 #optdepends=('')
 #conflicts=('')
