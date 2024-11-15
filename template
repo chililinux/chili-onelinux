@@ -1,0 +1,27 @@
+# Template file for 'chili-pkgbuild-template'
+pkgname=chili-pkgbuild-template
+version=1.0.0
+revision=1
+noarch=true
+#build_style=gnu-makefile
+#depends="gtk+3 gnome-bluetooth python3-setproctitle rfkill xapps"
+#hostmakedepends="gettext"
+hostmakedepends="git"
+short_desc="Chili PKGBUILD and template for VoidLinux"
+maintainer="Vilmar Catafesta <vcatafesta@gmail.com>"
+license="MIT"
+homepage="https://github.com/chililinux/${pkgname}"
+#distfiles="${homepage}/archive/$version/$pkgname-$version.tar.gz"
+#checksum=37a5b0bc3c7cbccee625209b9196a2e2966396cfe5c7652318559642fb6a7a32
+wrksrc=${pkgname}
+
+do_fetch() {
+	git clone --depth 1 ${homepage} ${wrksrc}
+	cd ${wrksrc}
+	git checkout main
+}
+
+do_install() {
+	vcopy etc /
+#	vcopy usr /
+}
