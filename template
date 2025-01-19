@@ -1,5 +1,5 @@
 # Template file for 'chili-onelinux'
-pkgname=chili-pkgbuild-template
+pkgname=chili-onelinux
 version=$(date +%Y%m%d)
 revision=$(date +%H%M)
 noarch=true
