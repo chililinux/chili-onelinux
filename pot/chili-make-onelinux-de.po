@@ -1,0 +1,141 @@
+# Chili Tradutor Go - 2.1.17-20260116
+# Copyright (C) 2019-2026 Vilmar Catafesta <vcatafesta@gmail.com>
+# This file is distributed under the same license as the chili-tradutor-go package.
+msgid ""
+msgstr ""
+"Project-Id-Version: chili-tradutor-go 2.1.17-20260116\n"
+"POT-Creation-Date: 2026-01-26 13:05-0400\n"
+"PO-Revision-Date: 2026-01-26 13:05-0400\n"
+"Last-Translator: Vilmar Catafesta <vcatafesta@gmail.com>\n"
+"Language-Team: Portuguese <https://github.com/chililinux/chili-tradutor-go>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: chili-make-onelinux:172
+#, sh-printf-format
+msgid "FATAL:"
+msgstr "TÖDLICH:"
+
+#: chili-make-onelinux:183
+msgid "Rodando"
+msgstr "Läuft"
+
+#: chili-make-onelinux:196
+msgid "ERRO: não consegui encontrar o comando"
+msgstr "FEHLER: Der Befehl konnte nicht gefunden werden"
+
+#: chili-make-onelinux:198
+msgid "OK: comando"
+msgstr "OK: Befehl"
+
+#: chili-make-onelinux:203 chili-make-onelinux:206
+msgid "IMPOSSÍVEL CONTINUAR"
+msgstr "UNMÖGLICH, WEITERZUWEISEN"
+
+#: chili-make-onelinux:204
+msgid "Este script precisa dos comandos listados acima"
+msgstr "Dieses Skript benötigt die oben aufgeführten Befehle"
+
+#: chili-make-onelinux:205
+msgid "Instale-os e/ou verifique se eles estão em seu"
+msgstr "Installieren Sie sie und/oder stellen Sie sicher, dass sie auf Ihrem Computer vorhanden sind"
+
+#: chili-make-onelinux:207
+msgid "Instalação abortada!"
+msgstr "Installation abgebrochen!"
+
+#: chili-make-onelinux:217
+msgid "Download Kernel. Cancelado!"
+msgstr "Laden Sie den Kernel herunter. Abgesagt!"
+
+#: chili-make-onelinux:245
+msgid "Download Busybox. Cancelado!"
+msgstr "Laden Sie Busybox herunter. Abgesagt!"
+
+#: chili-make-onelinux:276
+msgid "Download Dropbear. Cancelado!"
+msgstr "Laden Sie Dropbear herunter. Abgesagt!"
+
+#: chili-make-onelinux:280
+msgid "Construindo Dropbear"
+msgstr "Dropbear bauen"
+
+#: chili-make-onelinux:300
+msgid "Construindo Initramfs..."
+msgstr "Initramfs erstellen..."
+
+#: chili-make-onelinux:313
+msgid "Linkando Busybox"
+msgstr "Linkando Busybox"
+
+#: chili-make-onelinux:328
+msgid "Linkando Dropbear"
+msgstr "Linkando Dropbear"
+
+#: chili-make-onelinux:343
+msgid "__"
+msgstr "__"
+
+#: chili-make-onelinux:343
+msgid "___"
+msgstr "___"
+
+#: chili-make-onelinux:647
+msgid "Kernel (bzImage) ou Initramfs (initrd.img) não encontrado. Cancelado!"
+msgstr "Kernel (bzImage) oder Initramfs (initrd.img) nicht gefunden. Abgesagt!"
+
+#: chili-make-onelinux:653
+msgid "precisa de permissões de root para continuar, saindo."
+msgstr "Zum Fortfahren sind Root-Berechtigungen erforderlich. Beenden."
+
+#: chili-make-onelinux:659
+msgid "operação"
+msgstr "Betrieb"
+
+#: chili-make-onelinux:660
+msgid "operação:"
+msgstr "Betrieb:"
+
+#: chili-make-onelinux:661
+msgid "Criar todo sistema (default)"
+msgstr "Gesamtes System erstellen (Standard)"
+
+#: chili-make-onelinux:662
+msgid "Criar somente Busybox"
+msgstr "Nur Busybox erstellen"
+
+#: chili-make-onelinux:663
+msgid "Criar somente Dropbear"
+msgstr "Erstelle nur Dropbear"
+
+#: chili-make-onelinux:664
+msgid "Criar somente Kernel"
+msgstr "Nur Kernel erstellen"
+
+#: chili-make-onelinux:665
+msgid "Criar somente Initramfs"
+msgstr "Erstellen Sie nur Initramfs"
+
+#: chili-make-onelinux:666
+msgid "Executar image"
+msgstr "Bild ausführen"
+
+#: chili-make-onelinux:667
+msgid "Desativar cores na saída"
+msgstr "Deaktivieren Sie die Farben in der Ausgabe"
+
+#: chili-make-onelinux:668
+msgid "Este help"
+msgstr "Es ist Hilfe"
+
+#: chili-make-onelinux:682 chili-make-onelinux:690 chili-make-onelinux:695
+#: chili-make-onelinux:700 chili-make-onelinux:705 chili-make-onelinux:710
+msgid "Construindo... Verifique log:"
+msgstr "Gebäude... Protokoll prüfen:"
+
+#: chili-make-onelinux:722
+msgid "Operação inválida"
+msgstr "Ungültiger Vorgang"

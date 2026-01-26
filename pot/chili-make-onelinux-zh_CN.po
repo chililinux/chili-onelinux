@@ -1,0 +1,141 @@
+# Chili Tradutor Go - 2.1.17-20260116
+# Copyright (C) 2019-2026 Vilmar Catafesta <vcatafesta@gmail.com>
+# This file is distributed under the same license as the chili-tradutor-go package.
+msgid ""
+msgstr ""
+"Project-Id-Version: chili-tradutor-go 2.1.17-20260116\n"
+"POT-Creation-Date: 2026-01-26 13:05-0400\n"
+"PO-Revision-Date: 2026-01-26 13:05-0400\n"
+"Last-Translator: Vilmar Catafesta <vcatafesta@gmail.com>\n"
+"Language-Team: Portuguese <https://github.com/chililinux/chili-tradutor-go>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: chili-make-onelinux:172
+#, sh-printf-format
+msgid "FATAL:"
+msgstr "致命的："
+
+#: chili-make-onelinux:183
+msgid "Rodando"
+msgstr "跑步"
+
+#: chili-make-onelinux:196
+msgid "ERRO: não consegui encontrar o comando"
+msgstr "错误：找不到命令"
+
+#: chili-make-onelinux:198
+msgid "OK: comando"
+msgstr "确定：命令"
+
+#: chili-make-onelinux:203 chili-make-onelinux:206
+msgid "IMPOSSÍVEL CONTINUAR"
+msgstr "无法继续"
+
+#: chili-make-onelinux:204
+msgid "Este script precisa dos comandos listados acima"
+msgstr "该脚本需要上面列出的命令"
+
+#: chili-make-onelinux:205
+msgid "Instale-os e/ou verifique se eles estão em seu"
+msgstr "安装它们和/或确保它们在您的"
+
+#: chili-make-onelinux:207
+msgid "Instalação abortada!"
+msgstr "安装中止！"
+
+#: chili-make-onelinux:217
+msgid "Download Kernel. Cancelado!"
+msgstr "下载内核。取消！"
+
+#: chili-make-onelinux:245
+msgid "Download Busybox. Cancelado!"
+msgstr "下载Busybox。取消！"
+
+#: chili-make-onelinux:276
+msgid "Download Dropbear. Cancelado!"
+msgstr "下载Dropbear。取消！"
+
+#: chili-make-onelinux:280
+msgid "Construindo Dropbear"
+msgstr "建筑掉落熊"
+
+#: chili-make-onelinux:300
+msgid "Construindo Initramfs..."
+msgstr "构建 Initramfs..."
+
+#: chili-make-onelinux:313
+msgid "Linkando Busybox"
+msgstr "Linkando Busybox"
+
+#: chili-make-onelinux:328
+msgid "Linkando Dropbear"
+msgstr "林坎多水滴熊"
+
+#: chili-make-onelinux:343
+msgid "__"
+msgstr "__"
+
+#: chili-make-onelinux:343
+msgid "___"
+msgstr "___"
+
+#: chili-make-onelinux:647
+msgid "Kernel (bzImage) ou Initramfs (initrd.img) não encontrado. Cancelado!"
+msgstr "未找到内核 (bzImage) 或 Initramfs (initrd.img)。取消！"
+
+#: chili-make-onelinux:653
+msgid "precisa de permissões de root para continuar, saindo."
+msgstr "需要root权限才能继续，退出。"
+
+#: chili-make-onelinux:659
+msgid "operação"
+msgstr "操作"
+
+#: chili-make-onelinux:660
+msgid "operação:"
+msgstr "手术："
+
+#: chili-make-onelinux:661
+msgid "Criar todo sistema (default)"
+msgstr "创建整个系统（默认）"
+
+#: chili-make-onelinux:662
+msgid "Criar somente Busybox"
+msgstr "仅创建 Busybox"
+
+#: chili-make-onelinux:663
+msgid "Criar somente Dropbear"
+msgstr "只创建 Dropbear"
+
+#: chili-make-onelinux:664
+msgid "Criar somente Kernel"
+msgstr "仅创建内核"
+
+#: chili-make-onelinux:665
+msgid "Criar somente Initramfs"
+msgstr "仅创建 Initramfs"
+
+#: chili-make-onelinux:666
+msgid "Executar image"
+msgstr "运行图像"
+
+#: chili-make-onelinux:667
+msgid "Desativar cores na saída"
+msgstr "禁用输出中的颜色"
+
+#: chili-make-onelinux:668
+msgid "Este help"
+msgstr "这是帮助"
+
+#: chili-make-onelinux:682 chili-make-onelinux:690 chili-make-onelinux:695
+#: chili-make-onelinux:700 chili-make-onelinux:705 chili-make-onelinux:710
+msgid "Construindo... Verifique log:"
+msgstr "构建...检查日志："
+
+#: chili-make-onelinux:722
+msgid "Operação inválida"
+msgstr "无效操作"

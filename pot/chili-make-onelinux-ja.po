@@ -1,0 +1,141 @@
+# Chili Tradutor Go - 2.1.17-20260116
+# Copyright (C) 2019-2026 Vilmar Catafesta <vcatafesta@gmail.com>
+# This file is distributed under the same license as the chili-tradutor-go package.
+msgid ""
+msgstr ""
+"Project-Id-Version: chili-tradutor-go 2.1.17-20260116\n"
+"POT-Creation-Date: 2026-01-26 13:05-0400\n"
+"PO-Revision-Date: 2026-01-26 13:05-0400\n"
+"Last-Translator: Vilmar Catafesta <vcatafesta@gmail.com>\n"
+"Language-Team: Portuguese <https://github.com/chililinux/chili-tradutor-go>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: chili-make-onelinux:172
+#, sh-printf-format
+msgid "FATAL:"
+msgstr "致命的："
+
+#: chili-make-onelinux:183
+msgid "Rodando"
+msgstr "ランニング"
+
+#: chili-make-onelinux:196
+msgid "ERRO: não consegui encontrar o comando"
+msgstr "エラー: コマンドが見つかりませんでした"
+
+#: chili-make-onelinux:198
+msgid "OK: comando"
+msgstr "OK: コマンド"
+
+#: chili-make-onelinux:203 chili-make-onelinux:206
+msgid "IMPOSSÍVEL CONTINUAR"
+msgstr "続行不可能"
+
+#: chili-make-onelinux:204
+msgid "Este script precisa dos comandos listados acima"
+msgstr "このスクリプトには上記のコマンドが必要です"
+
+#: chili-make-onelinux:205
+msgid "Instale-os e/ou verifique se eles estão em seu"
+msgstr "それらをインストールするか、それらがあなたのコンピュータにあることを確認してください。"
+
+#: chili-make-onelinux:207
+msgid "Instalação abortada!"
+msgstr "インストールが中止されました!"
+
+#: chili-make-onelinux:217
+msgid "Download Kernel. Cancelado!"
+msgstr "カーネルをダウンロードします。キャンセル！"
+
+#: chili-make-onelinux:245
+msgid "Download Busybox. Cancelado!"
+msgstr "ビジーボックスをダウンロードします。キャンセル！"
+
+#: chili-make-onelinux:276
+msgid "Download Dropbear. Cancelado!"
+msgstr "ドロップベアをダウンロードします。キャンセル！"
+
+#: chili-make-onelinux:280
+msgid "Construindo Dropbear"
+msgstr "Dropbear の構築"
+
+#: chili-make-onelinux:300
+msgid "Construindo Initramfs..."
+msgstr "Initramf を構築中..."
+
+#: chili-make-onelinux:313
+msgid "Linkando Busybox"
+msgstr "リンカンド・ビジーボックス"
+
+#: chili-make-onelinux:328
+msgid "Linkando Dropbear"
+msgstr "リンカンドドロップベア"
+
+#: chili-make-onelinux:343
+msgid "__"
+msgstr "__"
+
+#: chili-make-onelinux:343
+msgid "___"
+msgstr "___"
+
+#: chili-make-onelinux:647
+msgid "Kernel (bzImage) ou Initramfs (initrd.img) não encontrado. Cancelado!"
+msgstr "カーネル (bzImage) または Initramfs (initrd.img) が見つかりません。キャンセル！"
+
+#: chili-make-onelinux:653
+msgid "precisa de permissões de root para continuar, saindo."
+msgstr "続行するには root 権限が必要です。終了します。"
+
+#: chili-make-onelinux:659
+msgid "operação"
+msgstr "手術"
+
+#: chili-make-onelinux:660
+msgid "operação:"
+msgstr "手術："
+
+#: chili-make-onelinux:661
+msgid "Criar todo sistema (default)"
+msgstr "システム全体を作成 (デフォルト)"
+
+#: chili-make-onelinux:662
+msgid "Criar somente Busybox"
+msgstr "ビジーボックスのみを作成する"
+
+#: chili-make-onelinux:663
+msgid "Criar somente Dropbear"
+msgstr "Dropbear のみを作成する"
+
+#: chili-make-onelinux:664
+msgid "Criar somente Kernel"
+msgstr "カーネルのみを作成する"
+
+#: chili-make-onelinux:665
+msgid "Criar somente Initramfs"
+msgstr "Initramfs のみを作成する"
+
+#: chili-make-onelinux:666
+msgid "Executar image"
+msgstr "実行イメージ"
+
+#: chili-make-onelinux:667
+msgid "Desativar cores na saída"
+msgstr "出力の色を無効にする"
+
+#: chili-make-onelinux:668
+msgid "Este help"
+msgstr "それは助けです"
+
+#: chili-make-onelinux:682 chili-make-onelinux:690 chili-make-onelinux:695
+#: chili-make-onelinux:700 chili-make-onelinux:705 chili-make-onelinux:710
+msgid "Construindo... Verifique log:"
+msgstr "構築... ログを確認します:"
+
+#: chili-make-onelinux:722
+msgid "Operação inválida"
+msgstr "無効な操作"
