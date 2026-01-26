@@ -2,7 +2,7 @@
 
 pkgname=chili-onelinux
 pkgdesc="Create a mini linux with busybox"
-depends=('cpio' 'tar' 'sed' 'coreutils' 'wget' 'qemu-system-x86')
+depends=('cpio' 'tar' 'sed' 'coreutils' 'wget' 'qemu-system-amd64')
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
 arch=('any')
