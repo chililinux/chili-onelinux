@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck shell=bash disable=SC1091,SC2039,SC2166
 
-#  make-onelinux.sh - Create a mini linux with busybox
+#  chili-make-onelinux - Create a mini linux with busybox
 #  Created: 2024/04/05
 #  Altered: 2024/04/11
 #
@@ -28,15 +28,17 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 #  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #############################################################################
+export LANGUAGE="${LANGUAGE:-pt_BR}"
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=chili-make-onelinux
+#
 export PS4='${red}${0##*/}${green}[$FUNCNAME]${pink}[$LINENO]${reset} '
 #set -x
 set -e
 shopt -s extglob
 
-#export LANGUAGE=en
-#export LANGUAGE=pt_BR
-export TEXTDOMAINDIR=/usr/share/locale
-export TEXTDOMAIN=make-onelinux
+#sudo usermod -aG tty $USER
+#newgrp tty
 
 readonly APP="${0##*/}"
 readonly _VERSION_="1.0.11-20240411"
@@ -47,6 +49,8 @@ readonly KERNEL_VERSION=6.11.5
 readonly BUSYBOX_VERSION=1.36.1
 readonly KERNEL_MAJOR=$(sed 's/\([0-9]*\)[^0-9].*/\1/' <<<"$KERNEL_VERSION")
 readonly LOCALDIR="$PWD"
+declare -gi ncontador=0
+declare -gi njobs=0
 
 function debug {
 	whiptail \
@@ -73,8 +77,8 @@ function sh_config {
 	declare -g TICK="${white}[${COL_LIGHT_GREEN}✓${COL_NC}${white}]"
 	declare -g CROSS="${white}[${COL_LIGHT_RED}✗${COL_NC}$white]"
 	declare -g BOOTLOG="/tmp/$APP-$(sh_diahora).log"
-  #sudo usermod -a -G tty $USER
-  #sudo chmod g+rw /dev/tty8
+	#sudo usermod -a -G tty $USER
+	#sudo chmod g+rw /dev/tty8
 	declare -g LOGGER='/dev/tty8'
 	declare -gi quiet=0
 	declare -g use_color=1
@@ -165,7 +169,7 @@ sh_unsetVarColors() {
 }
 
 die() {
-	printf "${red}$CROSS ${pink}%03d/%03d => ${red}$(gettext "FATAL:") %s\n\033[m" "$ncontador" "$njobs" "$@"
+   printf "${red}$CROSS ${pink}%03d/%03d => ${red}$(gettext "FATAL:") %s\n\033[m" "$ncontador" "$njobs" "$@"
 	exit 1
 }
 
@@ -333,16 +337,16 @@ function create_initrd {
 
 	{
 		cd $LOCALDIR/initrd
-		cat > etc/issue <<-EOF
+		cat >etc/issue <<-EOF
 			Bem vindo ao OneLinux
-  ___             _     _
- / _ \ _ __   ___| |   (_)_ __  _   ___  __
-| | | | '_ \ / _ \ |   | | '_ \| | | \ \/ /
-| |_| | | | |  __/ |___| | | | | |_| |>  <
- \___/|_| |_|\___|_____|_|_| |_|\__,_/_/\_\
+			  ___             _     _
+			 / _ \ _ __   ___| |   (_)_ __  _   ___  __
+			| | | | '_ \ / _ \ |   | | '_ \| | | \ \/ /
+			| |_| | | | |  __/ |___| | | | | |_| |>  <
+			 \___/|_| |_|\___|_____|_|_| |_|\__,_/_/\_\
 
-EOF
-		cat > etc/inittab <<-EOF
+		EOF
+		cat >etc/inittab <<-EOF
 			# Executed on startup
 			::sysinit:/etc/init.d/rc.sysinit
 			# Stuff to do when restarting the init process
@@ -369,28 +373,28 @@ EOF
 			#::askfirst:/bin/sh
 		EOF
 
-		cat > bin/syscheck <<-EOF
-		#!/bin/sh
-		#source /usr/etc/rc.d/rc.funcs
-		fs() {
-		        local SYSLOG_TAG=FileSystem
-		        log_msg "${SYSLOG_TAG}" Start check...
-		        sqfsck /dev/mtd3
-		        if [ ! $? -eq 0 ]; then
-		                log_msg "${SYSLOG_TAG}" Failed: $i
-		                /bin/support /tmp/emerg /etc/persistent/emerg.supp emerg 1;
-		        fi
-		        sysctl -w vm.drop_caches=3 2>&1 > /dev/null
-		        log_msg "${SYSLOG_TAG}" End check.
-		}
-		fs
+		cat >bin/syscheck <<-EOF
+			#!/bin/sh
+			#source /usr/etc/rc.d/rc.funcs
+			fs() {
+			        local SYSLOG_TAG=FileSystem
+			        log_msg "${SYSLOG_TAG}" Start check...
+			        sqfsck /dev/mtd3
+			        if [ ! $? -eq 0 ]; then
+			                log_msg "${SYSLOG_TAG}" Failed: $i
+			                /bin/support /tmp/emerg /etc/persistent/emerg.supp emerg 1;
+			        fi
+			        sysctl -w vm.drop_caches=3 2>&1 > /dev/null
+			        log_msg "${SYSLOG_TAG}" End check.
+			}
+			fs
 		EOF
 
-		cat > etc/passwd <<-EOF
+		cat >etc/passwd <<-EOF
 			root:x:0:0:root:/root:/bin/sh
 		EOF
 
-		cat > etc/inittab.old <<-EOF
+		cat >etc/inittab.old <<-EOF
 			# Executed on startup
 			::sysinit:/etc/init.d/rc.sysinit
 			# Stuff to do when restarting the init process
@@ -400,7 +404,7 @@ EOF
 			::shutdown:/bin/umount -a -r
 		EOF
 
-		cat > etc/init.d/rc.sysinit <<-EOF
+		cat >etc/init.d/rc.sysinit <<-EOF
 			#!/bin/sh
 
 			#reset root password
@@ -416,7 +420,7 @@ EOF
 			#setsid sh -c 'exec sh </dev/tty1 >/dev/tty1 2>&1'
 		EOF
 
-		cat > etc/profile <<-EOF
+		cat >etc/profile <<-EOF
 			PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 			export PATH PS1
 
@@ -559,7 +563,7 @@ EOF
 			#fi
 		EOF
 
-		cat > etc/init.d/network <<-EOF
+		cat >etc/init.d/network <<-EOF
 			#configure network
 			#ifconfig lo up
 			#ifconfig eth0 up
@@ -570,11 +574,11 @@ EOF
 			ip route add 10.0.2.2 via 10.0.2.10 dev eth0
 		EOF
 
-		cat > etc/hosts <<-EOF
+		cat >etc/hosts <<-EOF
 			127.0.0.1       localhost.localdomain   localhost
 		EOF
 
-		cat > etc/resolv.conf <<-EOF
+		cat >etc/resolv.conf <<-EOF
 			nameserver      8.8.8.8
 		EOF
 
@@ -583,7 +587,7 @@ EOF
 		chmod +x etc/init.d/rc.sysinit
 		chmod +x etc/init.d/network
 
-		cat > init <<-EOF
+		cat >init <<-EOF
 			#!/bin/sh
 
 			# crucial mountpoints
@@ -608,7 +612,7 @@ EOF
 			# rest of the mounts
 			mount none /dev/pts -t devpts
 			if [ -e /proc/bus/usb ]; then
-		        mount none /proc/bus/usb -t usbfs
+			        mount none /proc/bus/usb -t usbfs
 			fi
 			echo "...mounts done"
 			mkdir -p /var/run /var/tmp /var/log /var/etc /var/etc/persistent /var/lock
@@ -617,9 +621,9 @@ EOF
 			echo "...running /sbin/init"
 			exec /sbin/init
 			echo "INTERNAL ERROR!!! Cannot run /sbin/init."
-EOF
-#/bin/sh
-#poweroff -f
+		EOF
+		#/bin/sh
+		#poweroff -f
 		chmod -R 777 .
 		chmod 1777 tmp
 		find . | cpio -o -H newc >../initrd.img
@@ -697,12 +701,12 @@ while getopts "ABDKIiRrnh" opt; do
 		create_kernel
 		exit 0
 		;;
-	i|I)
+	i | I)
 		info_msg "$(gettext "Construindo... Verifique log:") ${white}tail -f $BOOTLOG${reset}"
 		create_initrd
 		exit 0
 		;;
-	r|R)
+	r | R)
 		info_msg "$(gettext "Construindo... Verifique log:") ${white}tail -f $BOOTLOG${reset}"
 		run_image
 		exit 0
