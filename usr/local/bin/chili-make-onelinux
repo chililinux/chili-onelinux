@@ -46,8 +46,8 @@ readonly DEPENDENCIES=(tar cpio sed tee wget qemu-system-x86_64)
 ##
 #readonly KERNEL_VERSION=6.8.4
 readonly KERNEL_VERSION=6.11.5
-#readonly BUSYBOX_VERSION=1.36.1
-readonly BUSYBOX_VERSION=1.37.0
+#readonly BUSYBOX_VERSION=1.37.0
+readonly BUSYBOX_VERSION=1.36.1
 readonly KERNEL_MAJOR=$(sed 's/\([0-9]*\)[^0-9].*/\1/' <<<"$KERNEL_VERSION")
 readonly LOCALDIR="$PWD"
 declare -gi ncontador=0
